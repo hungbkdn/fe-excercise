@@ -39,13 +39,17 @@ var User = (function () {
             });
         };
         this.name = name;
+        this.createSubList();
+        this.createDelBtn();
+        this.appendToList();
+        this.createDeleteEvent();
     }
     return User;
 }());
 $btn.addEventListener('click', function () {
     var $newUser = new User(document.getElementById('username').value);
-    $newUser.createSubList();
-    $newUser.createDelBtn();
-    $newUser.appendToList();
-    $newUser.createDeleteEvent();
+    // $newUser.createSubList();
+    // $newUser.createDelBtn();
+    // $newUser.appendToList();
+    // $newUser.createDeleteEvent();
 });

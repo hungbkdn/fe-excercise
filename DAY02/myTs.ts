@@ -11,6 +11,10 @@ class User {
 	 */
 	constructor(name: string) {
 		this.name = name;
+		this.createSubList();
+		this.createDelBtn();
+		this.appendToList();
+		this.createDeleteEvent();
 	}
 
 	/**
@@ -53,8 +57,4 @@ class User {
 
 $btn.addEventListener('click', () => {
 	let $newUser = new User(document.getElementById('username').value);
-	$newUser.createSubList();
-	$newUser.createDelBtn();
-	$newUser.appendToList();
-	$newUser.createDeleteEvent();
 });
