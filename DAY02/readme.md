@@ -1,0 +1,1 @@
+DAY02 Excercise - TS with ES6

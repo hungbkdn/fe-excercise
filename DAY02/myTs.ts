@@ -5,23 +5,43 @@ class User {
 	name: string;
 	$subList: any;
 	$btnDel: any;
+
+	/**
+	 * Constructor
+	 */
 	constructor(name: string) {
 		this.name = name;
 	}
+
+	/**
+	 * This function create <li> tag and insert username into this
+	 */
 	createSubList = () => {
 		$subList = document.createElement('li');
 		$subList.className = "list-group-item";
 		$subList.innerHTML = `${name}`;
 	}
+
+	/**
+	 * This function create <button> tag and set its name as Delete
+	 */
 	createDelBtn = () => {
 		$btnDel = document.createElement('button');
 		$btnDel.className = "btn btn-danger pull-right";
 		$btnDel.innerHTML = 'Delete';
 	}
+
+	/**
+	 * This function append <button> tag into <li> and append <li> into <ul>
+	 */
 	appendToList = () => {
 		$subList.appendChild($btnDel);
 		$list.appendChild($subList);
 	}
+
+	/**
+	 * This function create event for Delete button each <li> tag
+	 */
 	createDeleteEvent = () => {
 		$btnDel.addEventListener('click', (e) => {
 			let $parrentBtn = e.target.parentNode;
@@ -36,20 +56,5 @@ $btn.addEventListener('click', () => {
 	$newUser.createDelBtn();
 	$newUser.appendToList();
 	$newUser.createDeleteEvent();
+	alert("Delete success");
 });
-
-
-
-// $btn.addEventListener('click', () => {
-// 	var $newUser = document.getElementById('username');
-// 	var $subList = document.createElement('li');
-// 	$subList.innerHTML = `${$newUser.value}`;
-// 	var $btnDel = document.createElement('button');
-// 	$btnDel.innerHTML = 'Delete';
-// 	$subList.appendChild($btnDel);
-// 	$list.appendChild($subList);
-// 	$btnDel.addEventListener('click', (e) => {
-// 		$parrentBtn = $btnDel.parentNode;
-// 		$list.removeChild($parrentBtn);
-// 	});
-// });
