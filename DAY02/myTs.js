@@ -35,6 +35,7 @@ var User = (function () {
             $btnDel.addEventListener('click', function (e) {
                 var $parrentBtn = e.target.parentNode;
                 $list.removeChild($parrentBtn);
+                alert("Delete Success");
             });
         };
         this.name = name;
@@ -47,5 +48,4 @@ $btn.addEventListener('click', function () {
     $newUser.createDelBtn();
     $newUser.appendToList();
     $newUser.createDeleteEvent();
-    alert("Delete success");
 });

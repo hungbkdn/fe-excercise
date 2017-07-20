@@ -46,6 +46,7 @@ class User {
 		$btnDel.addEventListener('click', (e) => {
 			let $parrentBtn = e.target.parentNode;
 			$list.removeChild($parrentBtn);
+			alert("Delete Success");
 		});
 	}
 }
@@ -56,5 +57,4 @@ $btn.addEventListener('click', () => {
 	$newUser.createDelBtn();
 	$newUser.appendToList();
 	$newUser.createDeleteEvent();
-	alert("Delete success");
 });
