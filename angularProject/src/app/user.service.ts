@@ -24,17 +24,9 @@ export class UserService {
 
     sendUsername(userName: string) {
         //this.subject.next(userName);
-        this.listUser.push(userName);
-        this.makeArrUser();
+        this.$listUser.push(new User(userName));
     }
  	
- 	makeArrUser = () => {
- 		for(var usr of this.listUser) {
- 			console.log(usr);
- 			this.$listUser.push(new User(usr));
- 		}
- 	}
-
     getUser(): User[] {
         //return this.subject.asObservable();
         //console.log("hisdsadas");

@@ -1,3 +1,5 @@
+import {ElementRef,Renderer2} from '@angular/core';
+
 export class User {
 	name: string;
 	$list = document.getElementById('listUser');
@@ -6,26 +8,27 @@ export class User {
 
 	constructor(name: string) {
 		this.name = name;
-		this.createSubList();
-		this.appendToList();
+		// this.createSubList();
+		// this.appendToList();
+	  	this.$btnDel = document.createElement('button');
+	  	this.$btnDel.innerHTML = 'Delete';
 	}
 	show = () => {
 		return this.name;
 	}
 
-	createSubList = () => {
-  	this.$subList = document.createElement('li');
-  	this.$subList.innerHTML = this.name;
-  }
+	// createSubList = () => {
+ //  	this.$subList = document.createElement('li');
+ //  	this.$subList.innerHTML = this.name;
+ //  }
 
-  createDelBtn = () => {
-  	this.$btnDel = document.createElement('button');
-  	this.$btnDel.innerHTML = 'Delete';
-  }
+ //  createDelBtn = () => {
+ //  	this.$btnDel = document.createElement('button');
+ //  	this.$btnDel.innerHTML = 'Delete';
+ //  }
 
   appendToList = () => {
-  	this.createDelBtn();
-  	this.$subList.appendChild(this.$btnDel);
-  	this.$list.appendChild(this.$subList);
+  	// this.createDelBtn();
+  	return this.$btnDel;
   }
 }

@@ -15,5 +15,6 @@ export class FormComponent {
  
   getUser = () => {
   	this.messageService.sendUsername(this.name);
+  	this.name = '';
   }
 }

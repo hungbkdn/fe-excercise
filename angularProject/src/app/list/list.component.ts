@@ -12,6 +12,8 @@ export class ListComponent {
 	//message: string;
 	username: string[] = [];
 	$username: User[] = [];
+	$btn: any;
+	$list: any;
 	//subscription: Subscription;
     constructor(private messageService: UserService) {
         // subscribe to home component messages
