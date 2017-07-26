@@ -1,4 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<form-input></form-input>
-<list></list>
+<form-input (result) = "newMember()"></form-input>
+<div id = "listUser">
+<list [data] = "formComponent.userList"></list>
+</div>
+
+
+<!--For ContentChild Example-->
+<input type = "button" (click) = "testFunction()" value = "getChildenValue">
+<parent-component>
+	<child-component>
+	</child-component>
+	<child-component>
+	</child-component>
+</parent-component>
 

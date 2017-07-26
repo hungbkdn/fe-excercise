@@ -1,5 +1,5 @@
-import { Component, Output } from '@angular/core';
-import { UserService } from '../user.service';
+import { Component } from '@angular/core';
+import { User } from '../models/User';
 
 @Component({
   selector: 'form-input',
@@ -8,13 +8,10 @@ import { UserService } from '../user.service';
 })
 export class FormComponent {
   name: string;
-  // constructor(private _userService: UserService) {
+  userList: User[] = [];
 
-  // }
-  constructor(private messageService: UserService) {}
- 
   getUser = () => {
-  	this.messageService.sendUsername(this.name);
-  	this.name = '';
+    this.userList.push(new User(this.name));
+    this.name = '';
   }
 }

@@ -1,23 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UserService } from './user.service';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
+import { ParentComponent } from './parent.component';
+import { ChildComponent } from './child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

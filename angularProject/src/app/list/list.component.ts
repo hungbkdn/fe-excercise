@@ -1,6 +1,4 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { UserService } from '../user.service';
+import { Component, Input, ElementRef } from '@angular/core';
 import { User } from '../models/User';
 
 @Component({
@@ -9,16 +7,14 @@ import { User } from '../models/User';
   styleUrls: ['../app.component.css'],
 })
 export class ListComponent {
-	//message: string;
-	username: string[] = [];
-	$username: User[] = [];
-	$btn: any;
+	@Input() data: User[];
 	$list: any;
-	//subscription: Subscription;
-    constructor(private messageService: UserService) {
-        // subscribe to home component messages
-        // this.subscription = this.messageService.getUser().subscribe(message => { this.message = message; });
-        // let x = this.username[0].push(this.message);
-        this.$username = this.messageService.getUser();
-    }
+	constructor(private elementRef: ElementRef) { }
+
+	  ngAfterContentInit() {
+	  	 var hElement: HTMLElement = this.elementRef.nativeElement;
+	  	 var list = hElement.getElementsByTagName('ul');
+	  	 this.$list = list[0];
+	  	 console.log(this.$list);
+	  }
 };
