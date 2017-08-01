@@ -9,9 +9,12 @@ export class EmptyDirective {
 	constructor(private elementRef: ElementRef, private _renderer: Renderer) {}
 	ngOnInit() {
 		if(this.empty != '') {
-			console.log(this.empty);
-			console.dir(this.elementRef.nativeElement);
-			this._renderer.setElementProperty(this.elementRef.nativeElement, 'innerHTML', this.empty);
+			console.log(this.elementRef.nativeElement);
+			const birthday = this._renderer.createElement(this.elementRef.nativeElement, 'span');
+		  	birthday.innerHTML = this.empty;
+		    const parent = this.elementRef.nativeElement.parentNode;
+		    parent.appendChild(birthday);
+		    this.elementRef.nativeElement.remove();
 		}
 	}
 }

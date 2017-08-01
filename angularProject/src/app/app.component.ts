@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ListComponent } from './list/list.component';
+import { DetailComponent } from './detail/detail.component'; 
 
 @Component({
   selector: 'app-root',
@@ -6,16 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+	memberId: number;
 
-  // styleRuby = {
-  // 	color: 'red'
-  // }
-  // styleFE = {
-  // 	color: 'yellow'
-  // }
-  trainers = [
-  	{name: 'Vy', birthday: '', team: 'FE', isShow: false}, 
-  	{name: 'Kien', birthday: '01/01/1990', team: 'Ruby', isShow: false},
-  	{name: 'Nguyen', birthday: '', team: 'FE', isShow: false}
-  ];
+	onChange = (id: number) => {
+		this.memberId = id;
+	}
 }
