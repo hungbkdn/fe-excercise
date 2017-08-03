@@ -1,0 +1,13 @@
+{
+	"data": [
+				{
+					"id": "1", "name": "Vy", "birthday": "", "team": "FE"
+				},
+				{
+					"id": "2", "name": "Kien", "birthday": "01/01/1992", "team": "Ruby"
+				},
+				{
+					"id": "3", "name": "Nguyen", "birthday": "", "team": "PHP"
+				}
+			]
+}

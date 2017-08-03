@@ -8,13 +8,15 @@ export class EmptyDirective {
 	@Input() empty;
 	constructor(private elementRef: ElementRef, private _renderer: Renderer) {}
 	ngOnInit() {
-		if(this.empty != '') {
-			console.log(this.elementRef.nativeElement);
-			const birthday = this._renderer.createElement(this.elementRef.nativeElement, 'span');
-		  	birthday.innerHTML = this.empty;
-		    const parent = this.elementRef.nativeElement.parentNode;
-		    parent.appendChild(birthday);
-		    this.elementRef.nativeElement.remove();
+		if(!this.empty) {
+			 var birthday = this._renderer.createElement(this.elementRef.nativeElement, 'span');
+		      birthday.innerHTML = 'Empty';
+		      var parent = this.elementRef.nativeElement.parentNode;
+		      parent.appendChild(birthday);
+		      this.elementRef.nativeElement.remove();
+		}
+		else{
+			this.elementRef.nativeElement.innerHTML = this.empty;
 		}
 	}
 }

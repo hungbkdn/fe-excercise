@@ -8,9 +8,16 @@ import { TrainersService } from '../trainers.service';
 export class ListComponent {
 	@Output() sendMemberId: EventEmitter<any> = new EventEmitter();
 	trainers: any;
-	//$trainerService: TrainersService;
+
 	constructor(private trainerService: TrainersService) {
-		this.trainers = trainerService.getAll();
+		this.trainerService.getData().subscribe(
+	        (data: any) => {
+	          this.trainers=data.data;
+	        },
+	        err => {
+	          console.log("can't get products.");
+	        }
+      	);;
 	}
 
 	getId(memberid: number) {

@@ -8,9 +8,9 @@
     <td>
       {{member.name}}
     </td>
-    <td [empty] = "member.birthday" 
-        [ngClass] = "{'empty-bg': member.birthday == ''}">
-        Empty
+    <td>
+      <span [empty] = "member.birthday" [ngClass] = "{'empty-bg': member.birthday == ''}">
+      </span>
     </td>
     <td [ngClass] = "{
         'yellow-color': member.team == 'FE',

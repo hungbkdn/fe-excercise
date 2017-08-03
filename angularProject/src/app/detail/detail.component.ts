@@ -8,10 +8,24 @@ import { TrainersService } from '../trainers.service';
 export class DetailComponent {
 	@Input() id: number;
 	trainer: any;
+	trainers: any;
 	constructor(private trainerService: TrainersService) {
+		
 	}
 
-	ngDoCheck() {
-    	this.trainer = this.trainerService.getDetail(this.id);
+	ngOnChanges() {
+		this.trainerService.getData().subscribe(
+	        (data: any) => {
+	          this.trainers=data.data;
+	        },
+	        err => {
+	          console.log("can't get products.");
+	        }
+      	);
+      	for(var member of this.trainers) {
+      		if(member.id == this.id) {
+      			this.trainer = member;
+      		}
+      	}
   	}
 }
