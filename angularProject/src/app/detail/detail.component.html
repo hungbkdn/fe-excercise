@@ -1,0 +1,8 @@
+<div *ngIf="trainer">
+  <h3>I'm {{trainer.name}}</h3>
+  <span><span [empty] = "trainer.birthday" [ngClass] = "{'empty-bg': trainer.birthday == ''}">Empty
+  </span></span>
+  <p [ngClass] = "{'yellow-color': trainer.team == 'FE', 'red-color': trainer.team =='Ruby'}">
+    {{trainer.team}}
+  </p>
+</div>

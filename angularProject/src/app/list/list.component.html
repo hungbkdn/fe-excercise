@@ -1,0 +1,28 @@
+<table [ngStyle]="{'border-style': 'solid'}">
+  <tr>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Team</th>
+  </tr>
+  <tr *ngFor = "let member of trainers" [ngSwitch] = "member?.team">
+    <td>
+      {{member.name}}
+    </td>
+    <td>
+      <span [empty] = "member.birthday" [ngClass] = "{'empty-bg': member.birthday == ''}">
+      </span>
+    </td>
+    <td [ngClass] = "{
+        'yellow-color': member.team == 'FE',
+        'red-color': member.team =='Ruby'
+      }">
+        {{member.team}}
+    </td>
+    <td>
+      <!-- <button (click) = "member.isShow = !member.isShow"> -->
+      <button (click) = "getId(member.id)">
+        Detail
+      </button>
+    </td>
+  </tr>
+</table>
